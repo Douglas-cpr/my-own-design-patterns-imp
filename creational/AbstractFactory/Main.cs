@@ -14,7 +14,7 @@ public static class Application
     var monkeyFactory = new MonkeyFactory();
     Console.WriteLine("Creating a monkey");
     monkeyFactory.CreateArms();
-    monkeyFactory.CreateArms();
+    monkeyFactory.CreateLegs();
     Console.WriteLine("Created a monkey");
   }
 }
