@@ -8,6 +8,8 @@ public abstract class ApiFactory
 
   public string GetOperation() 
   {
+    // In below can has any necessary logic 
+    // when creating object
     var api = CreateApi();
     api.OpenConnection();
     var response = api.Get();
