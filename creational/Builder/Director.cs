@@ -3,12 +3,10 @@ using Builder.Builders;
 namespace Builder.Director;
 
 // Orchestrator
-public class Director 
+public class DirectorImp
 {
   private IBuilderHouse _builder;
   public IBuilderHouse Builder { set { _builder = value; }}
-
-  public Director() {}
 
   public void BuildSmallHouse() 
   {
