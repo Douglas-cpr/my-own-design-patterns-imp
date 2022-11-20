@@ -1,63 +1,18 @@
-﻿namespace Adapter;
+﻿using Adaper.Services;
+using Adapter.Adapters;
 
-public struct JSON {}
+namespace Adapter;
 
-public struct XML {}
-
-public class BankService
-{
-  private readonly XML _data;
-
-  public BankService(XML data)
-  {
-    _data = data;
-  }
-}
-
-public class GovernmentService
-{
-  private readonly JSON _data;
-
-  public GovernmentService(JSON data)
-  {
-    _data = data;
-  }
-}
-
-public class ApplicationService
-{
-  public XML GetData()
-  {
-    return new XML();
-  }
-}
-
-public class GovernmentAdapter
-{
-  private readonly JSON _data;
-
-  public GovernmentAdapter(ApplicationService app)
-  {
-    app.GetData();
-    _data = new JSON();
-  }
-  
-  public JSON GetData()
-  {
-    return _data;
-  }
-}
 
 public static class Main
 {
   public static void SimpleTest(string[] args)
   {
-    var app = new ApplicationService();
+    var handler1 = new ServiceHandler(new BankService());
 
-    var adapter = new GovernmentAdapter(app);
+    handler1.Deposit();
 
-    var govService = new GovernmentService(adapter.GetData());
-    var bankService = new BankService(app.GetData());
-
+    var adapter = new AirportServiceAdapter(new AiportService());
+    var adaptedHandler = new ServiceHandler(adapter);    
   }
 }
