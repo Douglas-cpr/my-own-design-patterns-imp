@@ -2,10 +2,10 @@
 
 public class BankAccount 
 {
-  private BankAccount _instance;
-  private readonly object _lock = new object();
+  private static BankAccount _instance;
+  private static readonly object _lock = new object();
 
-  private constructor()
+  private void constructor()
   {
     _instance = new BankAccount();
   }

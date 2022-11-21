@@ -3,7 +3,6 @@ using Adapter.Adapters;
 
 namespace Adapter;
 
-
 public static class Main
 {
   public static void SimpleTest(string[] args)
