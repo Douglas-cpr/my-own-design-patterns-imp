@@ -32,7 +32,7 @@ public class Tv : IDevice
   {
     return _enabled;
   }
-
+  
   public void SetChannel(int channel)
   {
     _channel = channel;
